@@ -1,0 +1,40 @@
+.card-adicionar-exercicio, .card-adicionar-rotina{
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    
+    .card-rotina{
+        background-color: #43b05c;
+        height: 250px;
+        width: 180px;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .centro{
+            background-color: #6bd682;
+            color: white;
+            font-size: 96px;
+        }
+    }
+
+    img{
+        height: 100%;
+    }
+
+    a{
+        display: none;
+    }
+}
+
+.card-adicionar-rotina{
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    
+    .card-rotina{
+        height: 295px;
+        width: 193px;
+    }
+}

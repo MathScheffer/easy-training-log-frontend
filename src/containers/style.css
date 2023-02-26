@@ -1,0 +1,172 @@
+@charset "UTF-8";
+*, *::after, *::before {
+  /*box-sizing: border-box serve para, caso colocar 20px de padding
+  numa div de 200px de largura, ela não fique com 220px, e sim, 
+  seus 220px. Tal "bloqueio de aumento" é fundamental para que as
+  colunas do grid não fique quebradas.*/
+  box-sizing: border-box;
+}
+
+.grid-1 {
+  width: calc(8.3333333333% - 20px);
+}
+
+.grid-2 {
+  width: calc(16.6666666667% - 20px);
+}
+
+.grid-3 {
+  width: calc(25% - 20px);
+}
+
+.grid-4 {
+  width: calc(33.3333333333% - 20px);
+}
+
+.grid-5 {
+  width: calc(41.6666666667% - 20px);
+}
+
+.grid-6 {
+  width: calc(50% - 20px);
+}
+
+.grid-7 {
+  width: calc(58.3333333333% - 20px);
+}
+
+.grid-8 {
+  width: calc(66.6666666667% - 20px);
+}
+
+.grid-9 {
+  width: calc(75% - 20px);
+}
+
+.grid-10 {
+  width: calc(83.3333333333% - 20px);
+}
+
+.grid-11 {
+  width: calc(91.6666666667% - 20px);
+}
+
+.grid-12 {
+  width: calc(100% - 20px);
+}
+
+/* Aplica o grid-structure 
+O ^ seleciona todos os elementos que começarem com 'grid-'*/
+[class^=grid-] {
+  min-height: 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 799px) {
+  [class^=grid-] {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.offset-1 {
+  margin-left: calc(8.3333333333% + 10px);
+}
+
+.offset-2 {
+  margin-left: calc(16.6666666667% + 10px);
+}
+
+.offset-3 {
+  margin-left: calc(25% + 10px);
+}
+
+.offset-4 {
+  margin-left: calc(33.3333333333% + 10px);
+}
+
+.offset-5 {
+  margin-left: calc(41.6666666667% + 10px);
+}
+
+.offset-6 {
+  margin-left: calc(50% + 10px);
+}
+
+.offset-7 {
+  margin-left: calc(58.3333333333% + 10px);
+}
+
+.offset-8 {
+  margin-left: calc(66.6666666667% + 10px);
+}
+
+.offset-9 {
+  margin-left: calc(75% + 10px);
+}
+
+.offset-10 {
+  margin-left: calc(83.3333333333% + 10px);
+}
+
+.offset-11 {
+  margin-left: calc(91.6666666667% + 10px);
+}
+
+.offset-12 {
+  margin-left: calc(100% + 10px);
+}
+
+@media screen and (max-width: 799px) {
+  .offset-1, .offset-2, .offset-3, .offset-4, .offset-5, .offset-6, .offset-7, .offset-8, .offset-9, .offset-10, .offset-11, .offset-12 {
+    margin-left: 0px;
+  }
+}
+.row {
+  position: relative;
+  display: flex;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+@media screen and (max-width: 799px) {
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+    flex-direction: column;
+  }
+}
+.row::after, .row::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+  .container {
+    max-width: 800px;
+  }
+}
+@media screen and (max-width: 799px) {
+  .container {
+    max-width: 480px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+div {
+  min-height: 50px !important;
+  margin-bottom: 20px;
+}
+
+.teste {
+  background-color: black;
+}

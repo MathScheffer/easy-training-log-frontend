@@ -1,0 +1,133 @@
+
+//Variaveis do grid
+$cols:12;
+$gutter:20px;
+$l-device:1200px;
+$m-device:800px;
+$s-device:480px;
+
+//Box-sizing
+*, *::after, *::before{
+    /*box-sizing: border-box serve para, caso colocar 20px de padding
+    numa div de 200px de largura, ela não fique com 220px, e sim, 
+    seus 220px. Tal "bloqueio de aumento" é fundamental para que as
+    colunas do grid não fique quebradas.*/
+    box-sizing:border-box;
+}
+//Mixinde Media-querie
+@mixin d($size){
+    @if $size == l{
+        @media screen and (min-width: #{$l-device}){
+            @content;
+        }
+    }
+    @else if $size == m{
+        // começa no mínimo de 760px
+        @media screen and (min-width: #{$m-device}) and 
+        //vai ATÉ 1200px - 1
+        (max-width: $l-device - 1){
+            @content;
+        }
+    }
+    @else if $size == s{
+        @media screen and (max-width: #{$m-device - 1} ){
+            @content;
+        }
+    }
+}
+
+//Função do Grid
+//Offset: É uma margem que ocupa o valor de uma coluna no layout (o gutter é incluso).
+@function grid($col,$offset:false){
+    $width: calc($col / $cols * 100) + "%";
+    $result:calc(#{$width} - #{$gutter});
+    @if $offset == offset{
+        $gutter: calc($gutter / 2);
+        $result: calc(#{$width} + #{$gutter});
+    }
+    @return $result;
+}
+// Gera as classes do grid
+
+@for $i from 1 through $cols{
+    .grid-#{$i}{
+        width: grid($i);
+    }
+}
+
+// Mixin estrutura do grid
+@mixin grid-structure{
+   // float:left;
+    min-height: 1px;
+    margin-left: calc($gutter / 2);
+    margin-right: calc($gutter / 2);
+    @include d(s){
+        width: 100%;
+        //float:none;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+/* Aplica o grid-structure 
+O ^ seleciona todos os elementos que começarem com 'grid-'*/
+[class^="grid-"]{
+    @include grid-structure;
+}
+
+// Gera os offset
+@for $i from 1 through $cols{
+    .offset-#{$i}{
+        margin-left: grid($i,offset);
+        @extend %offset;
+    }
+}
+@include d(s){
+    %offset{
+        margin-left:0px;
+    }
+}
+// Clearfix
+@mixin clearfix{
+    &::after, &::before{
+        content:'';
+        display:table;
+        clear: both;
+    }
+}
+@mixin container{
+    max-width: $l-device;
+    margin:0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include d(m){
+        max-width: $m-device;
+    }
+    @include d(s){
+        max-width: $s-device;
+        padding-left:10px;
+        padding-right: 10px;
+    }
+    //@include clearfix;
+}
+.row{
+    //position:relative;
+    display: flex;
+    //margin-left:- calc($gutter / 2);
+   // margin-right:- calc($gutter / 2);
+    @include d(s) {
+        margin-left: 0px;
+        margin-right: 0px;
+        flex-direction: column
+    }
+    @include clearfix;
+}
+.container {
+    @include container;
+}
+div{
+    min-height:50px !important;
+
+    margin-bottom: 20px;
+}
+

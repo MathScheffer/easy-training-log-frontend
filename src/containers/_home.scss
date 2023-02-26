@@ -1,0 +1,10 @@
+#home {
+    @include d(s){
+        padding: 0 !important;
+    }
+    
+}
+
+#container-home {
+    justify-content: space-between;
+}

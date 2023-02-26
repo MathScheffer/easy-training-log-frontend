@@ -1,0 +1,45 @@
+#pesquisa-form form, #cadastro-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+#pesquisa-form button,
+#pesquisa-form a,
+#cadastro-form button,
+#cadastro-form a{
+    width: 30%;
+
+    @include d(m) {
+        width: auto;
+    }
+
+    @include d(s) {
+        width: auto;
+    }
+}
+
+#resultado{
+    background-color: #f2f2f2;
+    padding: 5px;
+    height: 337px;
+    overflow-y: scroll;
+
+    ul{
+        @include d(s) {
+            padding: 0;
+        }
+    }
+    ul>li{
+        border-bottom: 1px solid #7c7c7c;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: self-end;
+        span{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+    }
+}
+

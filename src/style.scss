@@ -1,0 +1,14 @@
+@import './scss/grid';
+@import './scss/animations';
+@import './containers/index' ;
+@import './components/index';
+
+
+h1{
+    text-align: center;
+    font-size: 48px;
+}
+
+button{
+    cursor: pointer;
+}

@@ -1,0 +1,23 @@
+header{
+    background-color: #f2f2f2;
+}
+header.container{
+    width: 100%;
+    flex-direction: row;
+}
+
+#logoff, #logo{
+    display: flex;
+    align-items: center;
+}
+
+#logoff{
+    justify-content: right;
+}
+
+#Header button{
+    width: 25%;
+    @include d(s){
+        width: 35%;
+    }
+}

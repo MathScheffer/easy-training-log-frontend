@@ -1,0 +1,1091 @@
+@charset "UTF-8";
+*, *::after, *::before {
+  /*box-sizing: border-box serve para, caso colocar 20px de padding
+  numa div de 200px de largura, ela não fique com 220px, e sim, 
+  seus 220px. Tal "bloqueio de aumento" é fundamental para que as
+  colunas do grid não fique quebradas.*/
+  box-sizing: border-box;
+}
+
+.grid-1 {
+  width: calc(8.3333333333% - 20px);
+}
+
+.grid-2 {
+  width: calc(16.6666666667% - 20px);
+}
+
+.grid-3 {
+  width: calc(25% - 20px);
+}
+
+.grid-4 {
+  width: calc(33.3333333333% - 20px);
+}
+
+.grid-5 {
+  width: calc(41.6666666667% - 20px);
+}
+
+.grid-6 {
+  width: calc(50% - 20px);
+}
+
+.grid-7 {
+  width: calc(58.3333333333% - 20px);
+}
+
+.grid-8 {
+  width: calc(66.6666666667% - 20px);
+}
+
+.grid-9 {
+  width: calc(75% - 20px);
+}
+
+.grid-10 {
+  width: calc(83.3333333333% - 20px);
+}
+
+.grid-11 {
+  width: calc(91.6666666667% - 20px);
+}
+
+.grid-12 {
+  width: calc(100% - 20px);
+}
+
+/* Aplica o grid-structure 
+O ^ seleciona todos os elementos que começarem com 'grid-'*/
+[class^=grid-] {
+  min-height: 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 799px) {
+  [class^=grid-] {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.offset-1 {
+  margin-left: calc(8.3333333333% + 10px);
+}
+
+.offset-2 {
+  margin-left: calc(16.6666666667% + 10px);
+}
+
+.offset-3 {
+  margin-left: calc(25% + 10px);
+}
+
+.offset-4 {
+  margin-left: calc(33.3333333333% + 10px);
+}
+
+.offset-5 {
+  margin-left: calc(41.6666666667% + 10px);
+}
+
+.offset-6 {
+  margin-left: calc(50% + 10px);
+}
+
+.offset-7 {
+  margin-left: calc(58.3333333333% + 10px);
+}
+
+.offset-8 {
+  margin-left: calc(66.6666666667% + 10px);
+}
+
+.offset-9 {
+  margin-left: calc(75% + 10px);
+}
+
+.offset-10 {
+  margin-left: calc(83.3333333333% + 10px);
+}
+
+.offset-11 {
+  margin-left: calc(91.6666666667% + 10px);
+}
+
+.offset-12 {
+  margin-left: calc(100% + 10px);
+}
+
+@media screen and (max-width: 799px) {
+  .offset-1, .offset-2, .offset-3, .offset-4, .offset-5, .offset-6, .offset-7, .offset-8, .offset-9, .offset-10, .offset-11, .offset-12 {
+    margin-left: 0px;
+  }
+}
+.row {
+  display: flex;
+}
+@media screen and (max-width: 799px) {
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+    flex-direction: column;
+  }
+}
+.row::after, .row::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+  .container {
+    max-width: 800px;
+  }
+}
+@media screen and (max-width: 799px) {
+  .container {
+    max-width: 480px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+div {
+  min-height: 50px !important;
+  margin-bottom: 20px;
+}
+
+button {
+  background: white;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 3px #aaa;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+@media screen and (max-width: 799px) {
+  #home {
+    padding: 0 !important;
+  }
+}
+
+#container-home {
+  justify-content: space-between;
+}
+
+header {
+  background-color: #f2f2f2;
+}
+
+header.container {
+  width: 100%;
+  flex-direction: row;
+}
+
+#logoff, #logo {
+  display: flex;
+  align-items: center;
+}
+
+#logoff {
+  justify-content: right;
+}
+
+#Header button {
+  width: 25%;
+}
+@media screen and (max-width: 799px) {
+  #Header button {
+    width: 35%;
+  }
+}
+
+.container-component {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+#login-form {
+  border: 1px solid black;
+  width: 80vw;
+  height: 80vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form-login-container {
+  height: 40vh;
+  width: 35vw;
+}
+
+/* #login-form form{
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} */
+form {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* #login-form form input{
+    min-width: 80%;
+    margin: 14px 0;
+    height: 24px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+} */
+input {
+  min-width: 80%;
+  margin: 14px 0;
+  height: 24px;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+}
+
+#login-form div.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#login-form button {
+  background: white;
+  border: none;
+  width: 20%;
+  height: 10%;
+  border-radius: 4px;
+  box-shadow: 2px 2px 3px #aaa;
+}
+
+#pesquisa-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+#pesquisa-form button {
+  width: 30%;
+}
+
+#pesquisa-form form, #cadastro-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+#pesquisa-form button,
+#pesquisa-form a,
+#cadastro-form button,
+#cadastro-form a {
+  width: 30%;
+}
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+  #pesquisa-form button,
+  #pesquisa-form a,
+  #cadastro-form button,
+  #cadastro-form a {
+    width: auto;
+  }
+}
+@media screen and (max-width: 799px) {
+  #pesquisa-form button,
+  #pesquisa-form a,
+  #cadastro-form button,
+  #cadastro-form a {
+    width: auto;
+  }
+}
+
+#resultado {
+  background-color: #f2f2f2;
+  padding: 5px;
+  height: 337px;
+  overflow-y: scroll;
+}
+@media screen and (max-width: 799px) {
+  #resultado ul {
+    padding: 0;
+  }
+}
+#resultado ul > li {
+  border-bottom: 1px solid #7c7c7c;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: self-end;
+}
+#resultado ul > li span {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#mensagem {
+  position: fixed;
+  top: 2%;
+  width: 50%;
+  border-radius: 7px;
+  right: 5.5%;
+  font-size: 24px;
+  padding-left: 15px;
+  z-index: 10000;
+  animation: riseMessage 0.4s ease-out 1;
+}
+@keyframes riseMessage {
+  0% {
+    opacity: 0;
+    right: 25%;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+  #mensagem {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 799px) {
+  #mensagem {
+    width: 100%;
+  }
+}
+#mensagem.danger {
+  background-color: tomato;
+  color: #c41d00;
+}
+#mensagem.sucess {
+  background-color: #6bd682;
+  color: #007005;
+}
+
+.desativada {
+  display: none;
+}
+
+.ativada {
+  display: block;
+}
+
+.card-container-rotina-row {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media screen and (max-width: 799px) {
+  .card-container-rotina-row {
+    flex-direction: row;
+  }
+}
+
+.card-rotina-container {
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.card-rotina {
+  background-color: #d2d2d2;
+  box-shadow: 5px 6px 10px -3px rgba(0, 0, 0, 0.2);
+  height: 295px;
+  width: 193px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-rotina .centro {
+  background-color: #FFF;
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-rotina .centro a {
+  background: white;
+  border: none;
+  padding: 0px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+#modal-editar {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+}
+#modal-editar div.container {
+  background: #FFF;
+  justify-content: space-between;
+  height: 90vh;
+  top: 5vh;
+  z-index: 1000;
+  overflow-x: scroll;
+}
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+  #modal-editar div.container {
+    width: 90vw;
+  }
+}
+@media screen and (max-width: 799px) {
+  #modal-editar div.container {
+    top: 2.5vh;
+    width: 100vw;
+    height: 95vh;
+    max-width: none;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+  #modal-editar div.container div.row:nth-child(2) {
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 799px) {
+  #modal-editar div.container div.row:nth-child(2) {
+    flex-direction: row;
+  }
+}
+#modal-editar div.container div.row:nth-child(3) div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 799px) {
+  #modal-editar div.container div.row:nth-child(3) {
+    flex-direction: row;
+  }
+}
+
+.popup-container-elements {
+  width: 100%;
+  position: fixed;
+  left: 0;
+}
+.popup-container-elements h1 {
+  margin-top: 20px;
+}
+
+.editar-exercicio, .adicionar-exercicio, .adicionar-rotina {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  flex: 1;
+  min-width: 185px;
+  max-width: 185px;
+  background-color: #F2f2f2;
+  box-shadow: 3px 3px 7px #aaa;
+  padding: 5px;
+  background-color: #f7f7f7;
+  padding: 5px 5px 0;
+}
+.editar-exercicio label, .editar-exercicio input, .adicionar-exercicio label, .adicionar-exercicio input, .adicionar-rotina label, .adicionar-rotina input {
+  position: relative;
+  display: block;
+  /* padding-left: 20px;
+  padding-right: 5px; */
+  box-sizing: border-box;
+}
+.editar-exercicio input, .adicionar-exercicio input, .adicionar-rotina input {
+  text-align: right;
+}
+.editar-exercicio div.container-buttons, .adicionar-exercicio div.container-buttons, .adicionar-rotina div.container-buttons {
+  padding: 0 5px;
+  display: flex;
+  height: 55px;
+  width: 185px;
+  min-height: 0px !important;
+  margin-left: -5px;
+  margin-bottom: 0;
+  background-color: #e8e8e8;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+}
+.editar-exercicio div.container-buttons button, .adicionar-exercicio div.container-buttons button, .adicionar-rotina div.container-buttons button {
+  height: 25px;
+  width: 50px;
+  border: none;
+}
+.editar-exercicio div.container-buttons button a, .adicionar-exercicio div.container-buttons button a, .adicionar-rotina div.container-buttons button a {
+  display: none;
+}
+.editar-exercicio div.container-buttons img, .adicionar-exercicio div.container-buttons img, .adicionar-rotina div.container-buttons img {
+  height: 100%;
+}
+.editar-exercicio label[data-serie]::before, .adicionar-exercicio label[data-serie]::before, .adicionar-rotina label[data-serie]::before {
+  content: attr(data-serie);
+  position: absolute;
+  top: 0px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  z-index: 1;
+  height: 29px;
+  padding: 5px;
+  background: #e9e9e9;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 66.4px;
+  font-size: 11px;
+  line-height: 10px;
+}
+.editar-exercicio label[data-repeticoes]::before, .adicionar-exercicio label[data-repeticoes]::before, .adicionar-rotina label[data-repeticoes]::before {
+  content: attr(data-repeticoes);
+  position: absolute;
+  top: 0px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  z-index: 1;
+  height: 29px;
+  padding: 5px;
+  background: #e9e9e9;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 66.4px;
+  font-size: 11px;
+  line-height: 10px;
+}
+.editar-exercicio label[data-carga]::before, .adicionar-exercicio label[data-carga]::before, .adicionar-rotina label[data-carga]::before {
+  content: attr(data-carga);
+  position: absolute;
+  top: 0px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  z-index: 1;
+  height: 29px;
+  padding: 5px;
+  background: #e9e9e9;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 66.4px;
+  font-size: 11px;
+  line-height: 10px;
+}
+.editar-exercicio label[data-cargaalcan]::before, .adicionar-exercicio label[data-cargaalcan]::before, .adicionar-rotina label[data-cargaalcan]::before {
+  content: attr(data-cargaalcan);
+  position: absolute;
+  top: 0px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  z-index: 1;
+  height: 29px;
+  padding: 5px;
+  background: #e9e9e9;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 66.4px;
+  font-size: 11px;
+  line-height: 10px;
+}
+.editar-exercicio label[data-repeticoesf]::before, .adicionar-exercicio label[data-repeticoesf]::before, .adicionar-rotina label[data-repeticoesf]::before {
+  content: attr(data-repeticoesf);
+  position: absolute;
+  top: 0px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  z-index: 1;
+  height: 29px;
+  padding: 5px;
+  background: #e9e9e9;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 66.4px;
+  font-size: 11px;
+  line-height: 10px;
+}
+
+.editar-exercicio {
+  min-height: 337px !important;
+}
+
+.opcoes-container {
+  background: none;
+  display: none;
+}
+.opcoes-container input {
+  width: 100%;
+  margin-top: -5px;
+  height: 29px;
+}
+
+.display-block {
+  display: block;
+}
+
+.name-input {
+  height: 73px;
+  padding: 17px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.adicionar-exercicio, .adicionar-rotina {
+  position: relative;
+  height: 190px;
+}
+
+.adicionar-rotina {
+  justify-content: center;
+}
+.adicionar-rotina form {
+  height: auto;
+}
+
+.card-adicionar-exercicio, .card-adicionar-rotina {
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.card-adicionar-exercicio .card-rotina, .card-adicionar-rotina .card-rotina {
+  background-color: #43b05c;
+  height: 250px;
+  width: 180px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-adicionar-exercicio .card-rotina .centro, .card-adicionar-rotina .card-rotina .centro {
+  background-color: #6bd682;
+  color: white;
+  font-size: 96px;
+}
+.card-adicionar-exercicio img, .card-adicionar-rotina img {
+  height: 100%;
+}
+.card-adicionar-exercicio a, .card-adicionar-rotina a {
+  display: none;
+}
+
+.card-adicionar-rotina {
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.card-adicionar-rotina .card-rotina {
+  height: 295px;
+  width: 193px;
+}
+
+.apagar-adicionar-exercicio-card {
+  background-color: tomato !important;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  padding: 0;
+}
+.apagar-adicionar-exercicio-card img {
+  height: 100%;
+}
+
+.card-container-rotina-row {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media screen and (max-width: 799px) {
+  .card-container-rotina-row {
+    flex-direction: row;
+  }
+}
+
+.card-rotina-container {
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.card-rotina {
+  background-color: #d2d2d2;
+  box-shadow: 5px 6px 10px -3px rgba(0, 0, 0, 0.2);
+  height: 295px;
+  width: 193px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-rotina .centro {
+  background-color: #FFF;
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-rotina .centro a {
+  background: white;
+  border: none;
+  padding: 0px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+#modal-editar {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+}
+#modal-editar div.container {
+  background: #FFF;
+  justify-content: space-between;
+  height: 90vh;
+  top: 5vh;
+  z-index: 1000;
+  overflow-x: scroll;
+}
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+  #modal-editar div.container {
+    width: 90vw;
+  }
+}
+@media screen and (max-width: 799px) {
+  #modal-editar div.container {
+    top: 2.5vh;
+    width: 100vw;
+    height: 95vh;
+    max-width: none;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+  #modal-editar div.container div.row:nth-child(2) {
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 799px) {
+  #modal-editar div.container div.row:nth-child(2) {
+    flex-direction: row;
+  }
+}
+#modal-editar div.container div.row:nth-child(3) div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 799px) {
+  #modal-editar div.container div.row:nth-child(3) {
+    flex-direction: row;
+  }
+}
+
+.popup-container-elements {
+  width: 100%;
+  position: fixed;
+  left: 0;
+}
+.popup-container-elements h1 {
+  margin-top: 20px;
+}
+
+.editar-exercicio, .adicionar-exercicio, .adicionar-rotina {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  flex: 1;
+  min-width: 185px;
+  max-width: 185px;
+  background-color: #F2f2f2;
+  box-shadow: 3px 3px 7px #aaa;
+  padding: 5px;
+  background-color: #f7f7f7;
+  padding: 5px 5px 0;
+}
+.editar-exercicio label, .editar-exercicio input, .adicionar-exercicio label, .adicionar-exercicio input, .adicionar-rotina label, .adicionar-rotina input {
+  position: relative;
+  display: block;
+  /* padding-left: 20px;
+  padding-right: 5px; */
+  box-sizing: border-box;
+}
+.editar-exercicio input, .adicionar-exercicio input, .adicionar-rotina input {
+  text-align: right;
+}
+.editar-exercicio div.container-buttons, .adicionar-exercicio div.container-buttons, .adicionar-rotina div.container-buttons {
+  padding: 0 5px;
+  display: flex;
+  height: 55px;
+  width: 185px;
+  min-height: 0px !important;
+  margin-left: -5px;
+  margin-bottom: 0;
+  background-color: #e8e8e8;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+}
+.editar-exercicio div.container-buttons button, .adicionar-exercicio div.container-buttons button, .adicionar-rotina div.container-buttons button {
+  height: 25px;
+  width: 50px;
+  border: none;
+}
+.editar-exercicio div.container-buttons button a, .adicionar-exercicio div.container-buttons button a, .adicionar-rotina div.container-buttons button a {
+  display: none;
+}
+.editar-exercicio div.container-buttons img, .adicionar-exercicio div.container-buttons img, .adicionar-rotina div.container-buttons img {
+  height: 100%;
+}
+.editar-exercicio label[data-serie]::before, .adicionar-exercicio label[data-serie]::before, .adicionar-rotina label[data-serie]::before {
+  content: attr(data-serie);
+  position: absolute;
+  top: 0px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  z-index: 1;
+  height: 29px;
+  padding: 5px;
+  background: #e9e9e9;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 66.4px;
+  font-size: 11px;
+  line-height: 10px;
+}
+.editar-exercicio label[data-repeticoes]::before, .adicionar-exercicio label[data-repeticoes]::before, .adicionar-rotina label[data-repeticoes]::before {
+  content: attr(data-repeticoes);
+  position: absolute;
+  top: 0px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  z-index: 1;
+  height: 29px;
+  padding: 5px;
+  background: #e9e9e9;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 66.4px;
+  font-size: 11px;
+  line-height: 10px;
+}
+.editar-exercicio label[data-carga]::before, .adicionar-exercicio label[data-carga]::before, .adicionar-rotina label[data-carga]::before {
+  content: attr(data-carga);
+  position: absolute;
+  top: 0px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  z-index: 1;
+  height: 29px;
+  padding: 5px;
+  background: #e9e9e9;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 66.4px;
+  font-size: 11px;
+  line-height: 10px;
+}
+.editar-exercicio label[data-cargaalcan]::before, .adicionar-exercicio label[data-cargaalcan]::before, .adicionar-rotina label[data-cargaalcan]::before {
+  content: attr(data-cargaalcan);
+  position: absolute;
+  top: 0px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  z-index: 1;
+  height: 29px;
+  padding: 5px;
+  background: #e9e9e9;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 66.4px;
+  font-size: 11px;
+  line-height: 10px;
+}
+.editar-exercicio label[data-repeticoesf]::before, .adicionar-exercicio label[data-repeticoesf]::before, .adicionar-rotina label[data-repeticoesf]::before {
+  content: attr(data-repeticoesf);
+  position: absolute;
+  top: 0px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  z-index: 1;
+  height: 29px;
+  padding: 5px;
+  background: #e9e9e9;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 66.4px;
+  font-size: 11px;
+  line-height: 10px;
+}
+
+.editar-exercicio {
+  min-height: 337px !important;
+}
+
+.opcoes-container {
+  background: none;
+  display: none;
+}
+.opcoes-container input {
+  width: 100%;
+  margin-top: -5px;
+  height: 29px;
+}
+
+.display-block {
+  display: block;
+}
+
+.name-input {
+  height: 73px;
+  padding: 17px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.adicionar-exercicio, .adicionar-rotina {
+  position: relative;
+  height: 190px;
+}
+
+.adicionar-rotina {
+  justify-content: center;
+}
+.adicionar-rotina form {
+  height: auto;
+}
+
+.card-adicionar-exercicio, .card-adicionar-rotina {
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.card-adicionar-exercicio .card-rotina, .card-adicionar-rotina .card-rotina {
+  background-color: #43b05c;
+  height: 250px;
+  width: 180px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-adicionar-exercicio .card-rotina .centro, .card-adicionar-rotina .card-rotina .centro {
+  background-color: #6bd682;
+  color: white;
+  font-size: 96px;
+}
+.card-adicionar-exercicio img, .card-adicionar-rotina img {
+  height: 100%;
+}
+.card-adicionar-exercicio a, .card-adicionar-rotina a {
+  display: none;
+}
+
+.card-adicionar-rotina {
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.card-adicionar-rotina .card-rotina {
+  height: 295px;
+  width: 193px;
+}
+
+.apagar-adicionar-exercicio-card {
+  background-color: tomato !important;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  padding: 0;
+}
+.apagar-adicionar-exercicio-card img {
+  height: 100%;
+}
+
+#redirecionar h1 {
+  font-size: 36px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+}
+
+button {
+  cursor: pointer;
+}
